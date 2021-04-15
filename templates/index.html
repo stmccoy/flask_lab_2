@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Add New Event</h1><br>
+<h1>Add New Event Form</h1><br>
 <form action="/" method="post">
-    <label for="name">Name of Event</label>
+    <label for="name">Name of Event</label><br>
     <input type="text" name="name" id="name"><br>
-    <label for="date">Date</label>
+    <label for="date">Date</label><br>
     <input type="text" name="date" id="date"><br>
-    <label for="num_of_guests">Number of Guests</label>
+    <label for="num_of_guests">Number of Guests</label><br>
     <input type="text" name="num_of_guests" id="num_of_guests"><br>
-    <label for="room_location">Location</label>
+    <label for="room_location">Location</label><br>
     <input type="text" name="room_location" id="room_location"><br>
-    <label for="description">Event Description</label>
+    <label for="description">Event Description</label><br>
     <textarea name="description" id="description" cols="30" rows="2"></textarea><br>
-    <label for="recurring-events">Recurring?</label>
+    <label for="recurring-events">Recurring?</label><br>
     <input type="checkbox" id="recurring" name="recurring"><br><br>
     <input type="submit" value="Add Event">
 </form>
-<hr>
+    <br>
+    <br>
     <h2>Upcoming Events</h2>
+    <br>
+    <hr>
     {% for event in events %}
     <div>
         <p><b>{{ event.name }}</b></p>
