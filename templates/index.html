@@ -14,7 +14,7 @@
     <label for="description">Event Description</label>
     <textarea name="description" id="description" cols="30" rows="2"></textarea><br>
     <label for="recurring-events">Recurring?</label>
-    <input type="text" name="recurring" id="recurring"><br><br>
+    <input type="checkbox" id="recurring" name="recurring"><br><br>
     <input type="submit" value="Add Event">
 </form>
 <hr>
@@ -26,7 +26,7 @@
         <p>{{ event.num_of_guests }} guests</p>
         <p>{{ event.room_location }}</p>
         <p>{{ event.description }}</p>
-        {% if event.recurring == "True"  %}
+        {% if event.recurring %}
         <span>Recurring: ✅</span>
         {% endif %}
         <hr>
