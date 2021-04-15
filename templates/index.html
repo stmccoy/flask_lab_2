@@ -21,7 +21,6 @@
     <br>
     <h2>Upcoming Events</h2>
     <br>
-    <hr>
     {% for event in events %}
     <div>
         <p><b>{{ event.name }}</b></p>
@@ -32,7 +31,6 @@
         {% if event.recurring %}
         <span>Recurring: ✅</span>
         {% endif %}
-        <hr>
     </div>
     {% endfor %}
 

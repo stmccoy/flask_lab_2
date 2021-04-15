@@ -2,3 +2,14 @@ form, h1, h2 {
     text-align: center;
     text-decoration: underline;
 }
+
+body{
+    background-color: skyblue;
+}
+
+div {
+    background-color: #ccffff;
+    border: solid black;
+    padding-left: 1%;
+    padding-bottom: 2%;
+}
