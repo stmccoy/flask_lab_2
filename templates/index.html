@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add New Event</h1><br>
+<form action="/" method="post">
+    <label for="name">Name of Event</label>
+    <input type="text" name="name" id="name"><br>
+    <label for="date">Date</label>
+    <input type="text" name="date" id="date"><br>
+    <label for="num_of_guests">Number of Guests</label>
+    <input type="text" name="num_of_guests" id="num_of_guests"><br>
+    <label for="room_location">Location</label>
+    <input type="text" name="room_location" id="room_location"><br>
+    <label for="description">Event Description</label>
+    <textarea name="description" id="description" cols="30" rows="2"></textarea><br>
+    <label for="recurring-events">Recurring?</label>
+    <input type="text" name="recurring" id="recurring"><br><br>
+    <input type="submit" value="Add Event">
+</form>
+<hr>
+    <h2>Upcoming Events</h2>
+    {% for event in events %}
+    <div>
+        <p><b>{{ event.name }}</b></p>
+        <p>{{ event.date }}</p>
+        <p>{{ event.num_of_guests }} guests</p>
+        <p>{{ event.room_location }}</p>
+        <p>{{ event.description }}</p>
+        {% if event.recurring == "True"  %}
+        <span>Recurring: ✅</span>
+        {% endif %}
+        <hr>
+    </div>
+    {% endfor %}
+
+    
+{% endblock %}
+
+<form action="/action_page.php">
+    <p>Please select your gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+
+
+    Please select your gender:
+
+    Male x
+    Female x
+    Other x
