@@ -7,10 +7,6 @@ from models.event import Event
 def index():
     return render_template('index.html', events=events)
 
-# @app.route('/form')
-# def form():
-#     return render_template('form.html')
-
 @app.route('/', methods=['POST'])
 def submit_form():
     event_date = request.form['date']
