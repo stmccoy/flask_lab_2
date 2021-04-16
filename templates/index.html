@@ -29,8 +29,10 @@
         <p>{{ event.room_location }}</p>
         <p>{{ event.description }}</p>
         {% if event.recurring %}
-        <span>Recurring: ✅</span>
+        <p>Recurring: ✅</p> 
         {% endif %}
+        <br>
+        <input type="submit" value="Delete Event">
     </div>
     {% endfor %}
 
