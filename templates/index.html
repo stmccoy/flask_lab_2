@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Add New Event Form</h1><br>
-<form action="/" method="post">
+<form action="/" method="post" id="form-1">
     <label for="name">Name of Event</label><br>
     <input type="text" name="name" id="name"><br>
     <label for="date">Date</label><br>
@@ -32,7 +32,9 @@
         <p>Recurring: ✅</p> 
         {% endif %}
         <br>
-        <input type="submit" value="Delete Event">
+        <form action="/" method="post">
+            <input type="submit" name="{{ event.name }}" value="Delete Event">
+        </form>
     </div>
     {% endfor %}
 

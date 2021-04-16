@@ -10,6 +10,10 @@ def index():
 
 @app.route('/', methods=['POST'])
 def submit_form():
+    for event in events:
+        if event.name in request.form:
+            events.remove(event)
+            return render_template('index.html', events=events) 
     event_date = datetime.datetime.strptime(str(request.form['date']), '%Y-%m-%d').strftime('%d-%m-%Y')
     event_name = request.form['name']
     event_num_of_guests = request.form['num_of_guests']
