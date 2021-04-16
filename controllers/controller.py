@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request
 from models.events_list import events, add_event
 from models.event import Event
+import datetime
 
 @app.route('/')
 def index():
@@ -9,7 +10,7 @@ def index():
 
 @app.route('/', methods=['POST'])
 def submit_form():
-    event_date = request.form['date']
+    event_date = datetime.datetime.strptime(str(request.form['date']), '%Y-%m-%d').strftime('%d-%m-%Y')
     event_name = request.form['name']
     event_num_of_guests = request.form['num_of_guests']
     event_room_location = request.form['room_location']
